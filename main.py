@@ -83,3 +83,10 @@ for section in configs.sections():
 
 # 推送消息
 process.send_msg(s_title, s_content)
+if '申购失败' in s_content:
+    title="申购失败通知:"
+elif '申购中' in s_content:
+    title="申购未结束:"
+else:
+    title = "申购成功通知:"
+process.send_msg(title, s_content)
